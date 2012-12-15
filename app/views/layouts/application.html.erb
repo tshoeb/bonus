@@ -1,14 +1,64 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Bonus</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+  <head>
+    <title><%= full_title %></title>
+    <%= stylesheet_link_tag    "application", media: "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <header class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <h4>Residences Catalogue </h4>
+          <nav>
+            <ul class="nav pull-right">
+              <li><%= link_to "Home",    root_path %></li>
+              <li><%= link_to "About Us",   about_path %></li>
+              <li><%= link_to "Contact Us", contact_path %></li>
+              <li><%= link_to "Privacy Policy", privacy_path %></li>
+              <% if current_user %>
+                 
+                <%= link_to "Properties Offered", products_path, class: "btn btn-large btn-primary" %> 
+                <%= link_to "Log out", logout_path, class: "btn btn-large btn-primary" %> 
+              
+              <% else %>
+              
+                  <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+                  <%= link_to "Log in", login_path, class: "btn btn-large btn-primary" %>
+              
+              <% end %>
+            </ul>  
+          </nav>
+        </div>
+      </div>
+    </header> 
+    <% flash.each do |name, msg| %>
+    <% end %>
+    <br>
+    <br>
+    <div class="container">
+      <table border="0">
+        <tr>
+          <td><%= yield %></td>
+        </tr>
+      </table>    
+      <footer class="footer">
+        <small>
+         Strictly copyrighted 
+        </small>
+        <nav>
+          <ul>
+             <li><%= link_to(image_tag("home.png"), root_path) %></li>
+             <li><%= link_to(image_tag("about.png"), about_path) %></li>
+             <li><%= link_to(image_tag("contact.png"), contact_path) %></li>
+             <li><%= link_to(image_tag("privacy.png"), privacy_path) %></li>
+             <li><a href="https://twitter.com/Srinjoy_Chakrav"> Webmaster: Chakravarty | al-Ahmed © 2013</a>
+             </li>
+          </ul>
+              <%= link_to(image_tag("copyright.gif"),home_path) %>
+        </nav>
+      </footer>
+    </div>
+  </body>
 </html>
