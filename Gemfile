@@ -7,6 +7,7 @@ gem 'jquery-rails'
 gem 'execjs'
 gem 'therubyracer'
 gem 'bootstrap-sass'
+gem 'carrierwave'
 # for deployment on Heroku
 
 group :development, :test do

@@ -1,4 +1,7 @@
 Bonus::Application.routes.draw do
+  resources :properties
+
+
   resources :messages
 
 
