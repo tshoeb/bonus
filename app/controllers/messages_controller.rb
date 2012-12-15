@@ -2,6 +2,7 @@ class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.json
   def index
+    @title = "Messages"
     @messages = Message.all
 
     respond_to do |format|
@@ -13,6 +14,7 @@ class MessagesController < ApplicationController
   # GET /messages/1
   # GET /messages/1.json
   def show
+    @title = "Show Message"
     @message = Message.find(params[:id])
 
     respond_to do |format|
@@ -24,6 +26,7 @@ class MessagesController < ApplicationController
   # GET /messages/new
   # GET /messages/new.json
   def new
+    @title = "New Message"
     @message = Message.new
 
     respond_to do |format|
@@ -34,6 +37,7 @@ class MessagesController < ApplicationController
 
   # GET /messages/1/edit
   def edit
+    @title = "Edit Message"
     @message = Message.find(params[:id])
   end
 

@@ -2,6 +2,7 @@ class PropertiesController < ApplicationController
   # GET /properties
   # GET /properties.json
   def index
+    @title = "Properties"
     @properties = Property.all
 
     respond_to do |format|
@@ -13,6 +14,7 @@ class PropertiesController < ApplicationController
   # GET /properties/1
   # GET /properties/1.json
   def show
+    @title = "Registered Property"
     @property = Property.find(params[:id])
 
     respond_to do |format|
@@ -24,6 +26,7 @@ class PropertiesController < ApplicationController
   # GET /properties/new
   # GET /properties/new.json
   def new
+    @title = "New Property"
     @property = Property.new
 
     respond_to do |format|
@@ -34,6 +37,7 @@ class PropertiesController < ApplicationController
 
   # GET /properties/1/edit
   def edit
+    @title = "Edit Property"
     @property = Property.find(params[:id])
   end
 

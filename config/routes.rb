@@ -2,10 +2,10 @@ Bonus::Application.routes.draw do
 
 
   resources :users
-
-
   resources :properties
   resources :messages
+  resources :sessions
+ 
   root :to => 'pages#home'
   match '/home', :to => 'pages#home'
   match '/about', :to => 'pages#about'
