@@ -5,9 +5,13 @@ gem 'bcrypt-ruby'
 gem 'rails'
 gem 'jquery-rails'
 gem 'execjs'
-gem 'therubyracer'
+gem "therubyracer", "~> 0.11.0"
 gem 'bootstrap-sass'
 gem 'carrierwave'
+gem "libv8", "~> 3.11.8.4"
+gem 'therubyracer-heroku', '0.8.1.pre3'
+
+
 # for deployment on Heroku
 
 group :development, :test do
