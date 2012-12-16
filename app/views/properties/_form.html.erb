@@ -18,19 +18,19 @@
 
   <div class="field">
     <%= f.label :number_of_rooms %><br />
-    <%= f.number_field :number_of_rooms %>
+    <%= f.select(:number_of_rooms, Property::ROOMS) %>
   </div>
   <div class="field">
     <%= f.label :number_of_bedrooms %><br />
-    <%= f.number_field :number_of_bedrooms %>
+    <%= f.select(:number_of_bedrooms, Property::BEDROOMS) %>
   </div>
   <div class="field">
     <%= f.label :number_of_bathrooms %><br />
-    <%= f.number_field :number_of_bathrooms %>
+    <%= f.select(:number_of_bathrooms, Property::BATHROOMS) %>
   </div>
   <div class="field">
     <%= f.label :parking_allotment %><br />
-    <%= f.text_field :parking_allotment %>
+    <%= f.select(:parking_allotment, Property::PARKING) %>
   </div>
   <div class="field">
     <%= f.label :internet_included %><br />
@@ -42,7 +42,7 @@
   </div>
   <div class="field">
     <%= f.label :property_type %><br />
-    <%= f.text_field :property_type %>
+    <%= f.select(:property_type, Property::PROPERTY) %>
   </div>
   <div class="field">
     <%= f.label :owner_id %><br />
@@ -58,11 +58,11 @@
   </div>
   <div class="field">
     <%= f.label :period_type %><br />
-    <%= f.text_field :period_type %>
+    <%= f.select(:period_type, Property::PERIOD) %>
   </div>
   <div class="field">
     <%= f.label :purpose %><br />
-    <%= f.text_field :purpose %>
+    <%= f.select(:purpose, Property::PURPOSE) %>
   </div>
   <div class="field">
     <%= f.label :owner_name %><br />

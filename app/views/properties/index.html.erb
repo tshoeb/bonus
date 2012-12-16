@@ -2,11 +2,6 @@
 
 <table>
   <tr>
-    <th>Number of rooms</th>
-    <th>Number of bedrooms</th>
-    <th>Number of bathrooms</th>
-    <th>Parking allotment</th>
-    <th>Internet included</th>
     <th>Street address</th>
     <th>Property type</th>
     <th>Owner</th>
@@ -22,14 +17,6 @@
 
 <% @properties.each do |property| %>
   <tr>
-    <% unless @friend.photo_url.nil? %>
-        <p><%= image_tag @friend.photo_url %></p>
-    <% end %>
-    <td><%= property.number_of_rooms %></td>
-    <td><%= property.number_of_bedrooms %></td>
-    <td><%= property.number_of_bathrooms %></td>
-    <td><%= property.parking_allotment %></td>
-    <td><%= property.internet_included %></td>
     <td><%= property.street_address %></td>
     <td><%= property.property_type %></td>
     <td><%= property.owner_id %></td>
@@ -47,4 +34,5 @@
 
 <br />
 
-<%= link_to 'New Property', new_property_path %>
+<%= link_to 'New Property', new_property_path, class: "btn btn-large btn-primary" %>
+
