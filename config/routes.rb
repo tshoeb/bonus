@@ -1,5 +1,19 @@
 Bonus::Application.routes.draw do
+
+
+  resources :users
+  resources :properties
   resources :messages
+  resources :sessions
+ 
+  root :to => 'pages#home'
+  match '/home', :to => 'pages#home'
+  match '/about', :to => 'pages#about'
+  match '/contact', :to => 'pages#contact'
+  match '/privacy', :to => 'pages#privacy'
+  match '/signup', :to => 'users#new'
+  match '/login', :to => 'sessions#new'
+  match '/logout', :to => 'sessions#destroy'
 
 
   # The priority is based upon order of creation:
@@ -51,7 +65,7 @@ Bonus::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  
 
   # See how all your routes lay out with "rake routes"
 

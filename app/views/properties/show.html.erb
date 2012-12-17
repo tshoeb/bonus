@@ -1,0 +1,74 @@
+<p id="notice"><%= notice %></p>
+
+<% unless @property.photo_url.nil? %>
+  <p><%= image_tag @property.photo_url %></p>
+<% end %>
+
+<p>
+  <b>Number of rooms:</b>
+  <%= @property.number_of_rooms %>
+</p>
+
+<p>
+  <b>Number of bedrooms:</b>
+  <%= @property.number_of_bedrooms %>
+</p>
+
+<p>
+  <b>Number of bathrooms:</b>
+  <%= @property.number_of_bathrooms %>
+</p>
+
+<p>
+  <b>Parking allotment:</b>
+  <%= @property.parking_allotment %>
+</p>
+
+<p>
+  <b>Internet included:</b>
+  <%= @property.internet_included %>
+</p>
+
+<p>
+  <b>Street address:</b>
+  <%= @property.street_address %>
+</p>
+
+<p>
+  <b>Property type:</b>
+  <%= @property.property_type %>
+</p>
+
+<p>
+  <b>Owner:</b>
+  <%= @property.owner_id %>
+</p>
+
+<p>
+  <b>Manager:</b>
+  <%= @property.manager_id %>
+</p>
+
+<p>
+  <b>Price per period:</b>
+  <%= @property.price_per_period %>
+</p>
+
+<p>
+  <b>Period type:</b>
+  <%= @property.period_type %>
+</p>
+
+<p>
+  <b>Purpose:</b>
+  <%= @property.purpose %>
+</p>
+
+<p>
+  <b>Owner name:</b>
+  <%= @property.owner_name %>
+</p>
+
+
+<%= link_to 'Edit', edit_property_path(@property) %> |
+<%= link_to 'Back', properties_path %>
