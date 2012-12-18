@@ -15,4 +15,19 @@ describe Property do
         it {should validate_presence_of(:purpose)}
         it {should validate_presence_of(:street_address)}
     end
+    describe "All factories are properly created" do
+        before(:each) do
+            @villa = FactoryGirl.create(:property)
+            @mansion = FactoryGirl.create(:property, :owner_name => "Ross Geller")
+            @flat = FactoryGirl.create(:property, :owner_name => "Rachel Greene")
+        end
+        it "should check the creation of owners" do
+            @villa.should be_valid
+            @mansion.should be_valid
+            @flat.should be_valid
+            @villa.owner_name.should == "Talal Shoeb"
+            @mansion.owner_name.should == "Ross Geller"
+            @flat.owner_name.should == "Rachel Greene"
+        end
+    end
 end
