@@ -24,7 +24,7 @@ describe PropertiesController do
   # Property. As you add validations to Property, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    { "number_of_rooms" => "1" }
+    { :internet_included => true, :manager_id => 1, :number_of_bathrooms => 2, :number_of_bedrooms => 2, :number_of_rooms => 6, :owner_id => 1, :owner_name => "Talal Shoeb", :parking_allotment => 2, :period_type => "Monthly", :price_per_period => "8,000 QR", :property_type => "Villa", :purpose => "Primary Accomodation", :street_address => "Doha, Qatar"}
   end
 
   # This should return the minimal set of values that should be in the session
