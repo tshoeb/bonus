@@ -64,8 +64,8 @@ Then /^for the "(.*?)", I should see a link to "(.*?)"$/ do |csstag, textvalue|
   end
 end
 
-Given /^I am on the 'new user' page$/ do
-  visit new_user_path
+Given /^I am on the 'New User' page$/ do
+   visit new_user_path
 end
 
 When /^I enter "(.*?)" for "(.*?)"$/ do |value, field|
@@ -99,6 +99,10 @@ end
 
 When /^I click the "(.*?)" button$/ do |button_name|
   click_button button_name
+end
+
+When /^I check the "(.*?)" box$/ do |check_box_name|
+  check check_box_name
 end
 
 Given /^I am on the 'purchases' page$/ do
