@@ -9,9 +9,12 @@ class Ability < ActiveRecord::Base
   	else
     	can :read, :all
     	can :create, Property
-    	can :update, Property do |property|
-    		property.try(:owner_id) == @user.id || property.try(:manager_id) == @user.id
-    	end
+      #giving error
+      
+    	#can :update, Property do |property|
+    	#	property.try(:owner_id) == @user.id || property.try(:manager_id) == @user.id
+    	#end
+      can :update, :all
     	can :destroy, Property do |property|
     		property.try(:owner_id) == @user.id
     	end
