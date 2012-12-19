@@ -1,6 +1,14 @@
 require 'spec_helper'
 
 describe User do
+
+    it { should respond_to(:password_confirmation) }
+    it { should respond_to(:authenticate) }  
+    
+    it "should have proper associations" do
+        should have_many(:messages)
+        should have_many(:properties)
+    end
   	describe "Validation Macros" do
         it {should validate_presence_of(:name)}
         it {should validate_presence_of(:email)}

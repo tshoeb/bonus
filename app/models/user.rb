@@ -1,6 +1,11 @@
 class User < ActiveRecord::Base
   attr_accessible :photo, :admin, :contact_email, :contact_phone, :email, :name, :password, :password_confirmation
+  before_save :format_phone
   has_secure_password
+  has_many :sent_messages, :class_name => "Message", :foreign_key => "sender_id"
+  has_many :recieved_messages, :class_name => "Message", :foreign_key => "receiver_id"
+  has_many :owned_properties, :class_name => "Property", :foreign_key => "owner_id"
+  has_many :managed_properties, :class_name => "Property", :foreign_key => "manager_id"
   validates_presence_of :password, :on => :create
   
   mount_uploader :photo, PhotoUploader

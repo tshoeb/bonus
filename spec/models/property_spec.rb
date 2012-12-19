@@ -1,6 +1,9 @@
 require 'spec_helper'
 
 describe Property do
+    it "should have proper associations" do
+       should belong_to(:user)
+    end
   	describe "Validation Macros" do
         it {should validate_presence_of(:manager_id)}
         it {should validate_presence_of(:owner_id)}
