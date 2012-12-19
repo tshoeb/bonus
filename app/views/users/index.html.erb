@@ -2,8 +2,6 @@
 
 <table>
   <tr>
-    <th>Email</th>
-    <th>Password digest</th>
     <th>Name</th>
     <th>Contact email</th>
     <th>Contact phone</th>
@@ -15,8 +13,6 @@
 
 <% @users.each do |user| %>
   <tr>
-    <td><%= user.email %></td>
-    <td><%= user.password_digest %></td>
     <td><%= user.name %></td>
     <td><%= user.contact_email %></td>
     <td><%= user.contact_phone %></td>

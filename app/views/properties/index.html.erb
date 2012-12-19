@@ -25,9 +25,15 @@
     <td><%= property.period_type %></td>
     <td><%= property.purpose %></td>
     <td><%= property.owner_name %></td>
-    <td><%= link_to 'Show', property %></td>
-    <td><%= link_to 'Edit', edit_property_path(property) %></td>
-    <td><%= link_to 'Destroy', property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% if can? :read, @property %>
+        <td><%= link_to 'Show', property %></td>
+    <% end %>
+    <% if can? :update, @property %>
+        <td><%= link_to 'Edit', edit_property_path(property) %></td>
+    <% end %>
+    <% if can? :delete, @property %>
+        <td><%= link_to 'Destroy', property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>

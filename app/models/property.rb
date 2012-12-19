@@ -1,6 +1,7 @@
 class Property < ActiveRecord::Base
   attr_accessible :photo, :internet_included, :manager_id, :number_of_bathrooms, :number_of_bedrooms, :number_of_rooms, :owner_id, :owner_name, :parking_allotment, :period_type, :price_per_period, :property_type, :purpose, :street_address
-
+  belongs_to :owners, :class_name => "User", :foreign_key => "user_id"
+  belongs_to :managers, :class_name => "User", :foreign_key => "user_id"
   mount_uploader :photo, PhotoUploader
 
   validates :manager_id, :number_of_bathrooms, :number_of_bedrooms, :number_of_rooms, :owner_id, :owner_name, :parking_allotment, :period_type, :price_per_period, :property_type, :purpose, :street_address, :presence => true

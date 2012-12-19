@@ -1,4 +1,5 @@
 class PropertiesController < ApplicationController
+  load_and_authorize_resource
   # GET /properties
   # GET /properties.json
   def index
@@ -15,7 +16,7 @@ class PropertiesController < ApplicationController
   # GET /properties/1.json
   def show
     @title = "Registered Property"
-    @property = Property.find(params[:id])
+    #@property = Property.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -27,7 +28,8 @@ class PropertiesController < ApplicationController
   # GET /properties/new.json
   def new
     @title = "New Property"
-    @property = Property.new
+    @property.owner_id = current_user.id
+    #@property = Property.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -38,13 +40,14 @@ class PropertiesController < ApplicationController
   # GET /properties/1/edit
   def edit
     @title = "Edit Property"
-    @property = Property.find(params[:id])
+    #@property = Property.find(params[:id])
+    # unauthorized! if cannot? :update, @property
   end
 
   # POST /properties
   # POST /properties.json
   def create
-    @property = Property.new(params[:property])
+    #@property = Property.new(params[:property])
 
     respond_to do |format|
       if @property.save
@@ -60,7 +63,7 @@ class PropertiesController < ApplicationController
   # PUT /properties/1
   # PUT /properties/1.json
   def update
-    @property = Property.find(params[:id])
+    #@property = Property.find(params[:id])
 
     respond_to do |format|
       if @property.update_attributes(params[:property])
@@ -76,7 +79,7 @@ class PropertiesController < ApplicationController
   # DELETE /properties/1
   # DELETE /properties/1.json
   def destroy
-    @property = Property.find(params[:id])
+    #@property = Property.find(params[:id])
     @property.destroy
 
     respond_to do |format|
