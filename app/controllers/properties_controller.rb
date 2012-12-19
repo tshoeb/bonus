@@ -29,6 +29,7 @@ class PropertiesController < ApplicationController
   def new
     @title = "New Property"
     @property.owner_id = current_user.id
+    @property.owner_name = current_user.name
     #@property = Property.new
 
     respond_to do |format|
